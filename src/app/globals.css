@@ -1,0 +1,48 @@
+@import "tailwindcss";
+
+:root {
+	--background: #ffffff;
+	--foreground: #171717;
+}
+
+@theme inline {
+	--color-background: var(--background);
+	--color-foreground: var(--foreground);
+	--font-sans: var(--font-geist-sans);
+	--font-mono: var(--font-geist-mono);
+}
+
+@media (prefers-color-scheme: dark) {
+	:root {
+		--background: #0a0a0a;
+		--foreground: #ededed;
+	}
+}
+
+@font-face {
+	font-family: "rkbFont"; /* Name your font */
+	src: url("../../public/font/Morina-6RaZD.otf");
+	/*url("/public/font/Morina-6RaZD.otf") format("otf"); /* Specify paths to your font files */
+	font-weight: normal;
+	font-style: normal;
+}
+
+body {
+	background-image: url("../../public/img/bg-1.jpg");
+	background-repeat: no-repeat;
+	background-size: cover;
+	background-position: center center;
+
+	/* color: var(--foreground); */
+	font-family: "rkbFont", Arial, Helvetica, sans-serif;
+	transition-property: opacity, transform, filter, background;
+	transition-timing-function: ease-in-out;
+	transition-duration: 500ms;
+}
+
+.page-transition {
+	opacity: 0;
+	background: black;
+	transform: translateY(40px);
+	filter: blur(12px);
+}
