@@ -5,19 +5,24 @@ import { X, Plus } from "lucide-react";
 import { TransitionLink } from "../transitionLink";
 
 const pageNavigationMap: Record<string, string> = {
-	home: "",
-	services: "",
-	blog: "",
+	home: "/",
+	portfolio: "/portfolio",
+	// "https://book.squareup.com/appointments/s4v957vaozqatr/location/LS4KC4CH63WJV/services",
+	blog: "/blog",
 };
 
 export default function Navigation({ activeTab }: Record<string, string>) {
 	const [menuOpen, setMenuOpen] = useState(false);
 
+	const toggleMenu = () => {
+		setMenuOpen(!menuOpen);
+	};
+
 	return (
-		<motion.div className="relative w-full max-h-full flex flex-col items-center py-6">
+		<div className="relative h-10screen w-full flex flex-col items-center py-6">
 			{/* Top rounded rectangle (toggle menu) */}
 			{menuOpen && (
-				<div className="absolute bottom-25 left-1/2 -translate-x-1/2 mt-0 bg-[#25331f7e] backdrop-filter backdrop-blur-sm bg-opacity-30 text-[#C4A77D] rounded-[2rem] w-[90%] max-w-md p-6 flex flex-col gap-4 shadow-lg z-10 transition-all duration-300 ease-in-out">
+				<div className="absolute bottom-25 left-1/2 -translate-x-1/2 mt-0 bg-[#25331f7e] backdrop-filter backdrop-blur-sm bg-opacity-30 text-[#C4A77D] rounded-4xl w-[90%] max-w-md p-6 flex flex-col gap-4 shadow-lg z-10 transition-all duration-300 ease-in-out">
 					<div className="flex justify-between items-center">
 						<h1 className="text-lg font-semibold">RKB Epiphany</h1>
 						<p className="text-sm opacity-70">&#x2026;slogan</p>
@@ -39,10 +44,11 @@ export default function Navigation({ activeTab }: Record<string, string>) {
 			)}
 			{/* Bottom rounded rectangle (nav bar) */}
 			<motion.div className="bg-[#25331f7e] backdrop-filter backdrop-blur-sm bg-opacity-30 border-0 flex items-center  justify-center gap-6 text-[#C4A77D] rounded-full px-6 py-3 mt-60 shadow-md">
-				{["home", "services", "blog"].map((tab, i) => (
+				{["home", "portfolio", "blog"].map((tab, i) => (
 					<TransitionLink
 						href={pageNavigationMap[tab]}
 						key={i}
+						onClick={toggleMenu}
 					>
 						<div
 							className={`${pageNavigationMap[tab] === activeTab ? "bg-[#F4EDE6]" : "bg-[#2F3B2B]"} rounded-full px-5 py-2 text-sm hover:bg-[#3b4a35] transition`}
@@ -52,12 +58,12 @@ export default function Navigation({ activeTab }: Record<string, string>) {
 					</TransitionLink>
 				))}
 				<button
-					onClick={() => setMenuOpen(!menuOpen)}
-					className="w-8 h-8 flex items-center justify-center rounded-full bg-[#C4A77D] text-[#545C4A] hover:opacity-80 transition"
+					onClick={toggleMenu}
+					className="w-8 h-8 flex items-center justify-center rounded-full bg-[#C4A77D] text-[#545C4A] hover:opacity-80 transition hover:target:"
 				>
 					{menuOpen ? <X size={20} /> : <Plus size={20} />}
 				</button>
 			</motion.div>
-		</motion.div>
+		</div>
 	);
 }

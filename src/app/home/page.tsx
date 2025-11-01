@@ -17,13 +17,13 @@ export default function Home() {
 	return (
 		<main className="flex m-0 p-0 min-h-screen items-center w-full flex-col justify-center overflow-hidden">
 			{/* hero section */}
-			<section className=" w-dvw h-screen flex justify-center items-center">
+			<section className="w-dvw h-screen flex justify-center items-center">
 				<motion.div
 					initial={{ opacity: 0, y: 50 }}
 					whileInView={{ opacity: 1, y: 0 }}
 					transition={{ duration: 2 }}
 					viewport={{ once: true }}
-					className="flex w-[95vw] h-[95vh] rounded-xl px-20 py-10 my-0 lg:px-10 mx-0 justify-between gap-30 items-center bg-[#04070070] backdrop-filter backdrop-blur-sm bg-opacity-30 relative overflow-hidden"
+					className="flex w-[95vw] h-[95vh] rounded-xl px-20 py-10 my-0 lg:px-10 mx-0 justify-around gap-30 items-center bg-[#04070070] backdrop-filter backdrop-blur-sm bg-opacity-30 relative overflow-hidden"
 				>
 					<motion.div
 						initial={{ opacity: 0, x: -50 }}
@@ -189,9 +189,10 @@ export default function Home() {
 						initial={{ opacity: 0, y: 20 }}
 						whileInView={{ opacity: 1, y: 0 }}
 						transition={{ duration: 1 }}
-						className="text-xl lg:text-4xl font-light text-center text-white mb-5"
+						className="text-xl lg:text-4xl font-light text-center text-[#CC9D68] mb-5"
 					>
-						A glimpse into stories told through light
+						“Images that do more than look good They sell, engage, and leave
+						lasting impressions”
 					</motion.h1>
 				</motion.div>
 			</section>
@@ -229,9 +230,10 @@ export default function Home() {
 						initial={{ opacity: 0, y: 20 }}
 						whileInView={{ opacity: 1, y: 0 }}
 						transition={{ duration: 1 }}
-						className="text-xl lg:text-4xl font-light text-center text-white mb-5"
+						className="text-xl lg:text-4xl font-light text-center text-[#CC9D68] mb-5"
 					>
-						A glimpse into stories told through light
+						From corporate campaigns to creative launches, we capture your
+						vision with intent.
 					</motion.h1>
 				</motion.div>
 			</section>
@@ -249,7 +251,7 @@ export default function Home() {
 						initial={{ opacity: 0, y: 20 }}
 						whileInView={{ opacity: 1, y: 0 }}
 						transition={{ duration: 1 }}
-						className="text-xl lg:text-4xl font-light text-center text-white mb-5"
+						className="text-xl lg:text-4xl font-light text-center text-[#CC9D68] mb-5"
 					>
 						Testimonial Section
 					</motion.h1>
@@ -263,13 +265,13 @@ export default function Home() {
 					whileInView={{ opacity: 1, y: 0 }}
 					transition={{ duration: 2 }}
 					viewport={{ once: true }}
-					className="flex w-[95vw] h-[95vh] rounded-xl px-20 py-10 my-0 lg:px-10 mx-0 justify-between gap-30 items-center bg-[#04070070] backdrop-filter backdrop-blur-sm bg-opacity-30 relative overflow-hidden"
+					className="flex w-[95vw] h-[95vh] rounded-xl px-20 py-10 my-0 lg:px-10 mx-0 justify-center gap-30 items-center bg-[#04070070] backdrop-filter backdrop-blur-sm bg-opacity-30 relative overflow-hidden"
 				>
 					<motion.h1
 						initial={{ opacity: 0, y: 20 }}
 						whileInView={{ opacity: 1, y: 0 }}
 						transition={{ duration: 1 }}
-						className="text-xl lg:text-4xl font-light text-center text-white mb-5"
+						className="text-xl lg:text-4xl font-light text-center text-[#CC9D68] mb-5"
 					>
 						Contact card section
 					</motion.h1>
@@ -283,16 +285,29 @@ export default function Home() {
 					whileInView={{ opacity: 1, y: 0 }}
 					transition={{ duration: 2 }}
 					viewport={{ once: true }}
-					className="flex w-[95vw] h-[95vh] rounded-xl px-20 py-10 my-0 lg:px-10 mx-0 justify-between gap-30 items-center bg-[#04070070] backdrop-filter backdrop-blur-sm bg-opacity-30 relative overflow-hidden"
+					className="flex items-center justify-center w-[95vw] h-[95vh] rounded-xl px-20 py-10 my-0 lg:px-10 mx-0  gap-30 bg-[#04070070] backdrop-filter backdrop-blur-sm bg-opacity-30 relative overflow-hidden"
 				>
-					<motion.h1
-						initial={{ opacity: 0, y: 20 }}
-						whileInView={{ opacity: 1, y: 0 }}
-						transition={{ duration: 1 }}
-						className="text-xl lg:text-4xl font-light text-center text-white mb-5"
-					>
-						A glimpse into stories told through light
-					</motion.h1>
+					<motion.div className="align-item-center justify-center flex-col items-center gap-50">
+						<motion.h1
+							initial={{ opacity: 0, y: 20 }}
+							whileInView={{ opacity: 1, y: 0 }}
+							transition={{ duration: 1 }}
+							className="text-xl lg:text-4xl font-light text-center text-[#CC9D68] mb-5"
+						>
+							Ready to turn your brand moments into timeless visuals
+							<span className="font-serif">?</span>
+						</motion.h1>
+						<motion.h1
+							initial={{ opacity: 0, y: 20 }}
+							whileInView={{ opacity: 1, y: 0 }}
+							transition={{ duration: 1 }}
+							className="text-xl lg:text-4xl font-light text-center text-[#CC9D68] mb-5"
+						>
+							Let’s collaborate to create images that move your audience
+							<span className="font-serif">,</span> and your business
+						</motion.h1>
+						<motion.a href="">Book with us Now</motion.a>
+					</motion.div>
 				</motion.div>
 			</section>
 

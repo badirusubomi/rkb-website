@@ -1,7 +1,7 @@
 @import "tailwindcss";
 
 :root {
-	--background: #ffffff;
+	--background: #000000;
 	--foreground: #171717;
 }
 
@@ -22,18 +22,28 @@
 @font-face {
 	font-family: "rkbFont"; /* Name your font */
 	src: url("../../public/font/Morina-6RaZD.otf");
-	/*url("/public/font/Morina-6RaZD.otf") format("otf"); /* Specify paths to your font files */
+	font-weight: normal;
+	font-style: normal;
+}
+
+@font-face {
+	font-family: "rkbFont2"; /* Name your font */
+	src: url("../../public/font/Mogent-OGM1o.otf");
 	font-weight: normal;
 	font-style: normal;
 }
 
 body {
-	background-image: url("../../public/img/bg-1.jpg");
-	background-repeat: no-repeat;
+	background: #070e04 url("../../public/img/bg-1.jpg") no-repeat center center
+		fixed;
 	background-size: cover;
-	background-position: center center;
+	overscroll-behavior: none;
+	/* background-image: url("../../public/img/bg-1.jpg"); */
+	background-repeat: no-repeat;
+	/* background-size: cover; */
+	/* background-position: center center; */
 
-	/* color: var(--foreground); */
+	color: var(--foreground);
 	font-family: "rkbFont", Arial, Helvetica, sans-serif;
 	transition-property: opacity, transform, filter, background;
 	transition-timing-function: ease-in-out;
