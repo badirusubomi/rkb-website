@@ -15,7 +15,7 @@ export default function Home() {
 		"https://images.unsplash.com/photo-1503264116251-35a269479413?auto=format&fit=crop&q=80&w=500",
 	];
 	return (
-		<main className="flex m-0 p-0 min-h-screen items-center w-full flex-col justify-center overflow-hidden">
+		<main className="flex m-0 p-0 min-h-screen sm:flex-col items-center w-full flex-col justify-center overflow-hidden">
 			{/* hero section */}
 			<section className="w-dvw h-screen flex justify-center items-center">
 				<motion.div
@@ -287,7 +287,7 @@ export default function Home() {
 					viewport={{ once: true }}
 					className="flex items-center justify-center w-[95vw] h-[95vh] rounded-xl px-20 py-10 my-0 lg:px-10 mx-0  gap-30 bg-[#04070070] backdrop-filter backdrop-blur-sm bg-opacity-30 relative overflow-hidden"
 				>
-					<motion.div className="align-item-center justify-center flex-col items-center gap-50">
+					<motion.div className="align-item-center justify-center flex flex-col items-center gap-10">
 						<motion.h1
 							initial={{ opacity: 0, y: 20 }}
 							whileInView={{ opacity: 1, y: 0 }}

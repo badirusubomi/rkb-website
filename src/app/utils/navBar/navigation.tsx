@@ -19,7 +19,7 @@ export default function Navigation({ activeTab }: Record<string, string>) {
 	};
 
 	return (
-		<div className="relative h-10screen w-full flex flex-col items-center py-6">
+		<div className="fixed bottom-0 z-10 inset-x-0 mx-auto w-fit flex items-center justify-center h-auto py-0 mb-5">
 			{/* Top rounded rectangle (toggle menu) */}
 			{menuOpen && (
 				<div className="absolute bottom-25 left-1/2 -translate-x-1/2 mt-0 bg-[#25331f7e] backdrop-filter backdrop-blur-sm bg-opacity-30 text-[#C4A77D] rounded-4xl w-[90%] max-w-md p-6 flex flex-col gap-4 shadow-lg z-10 transition-all duration-300 ease-in-out">
@@ -43,7 +43,7 @@ export default function Navigation({ activeTab }: Record<string, string>) {
 				</div>
 			)}
 			{/* Bottom rounded rectangle (nav bar) */}
-			<motion.div className="bg-[#25331f7e] backdrop-filter backdrop-blur-sm bg-opacity-30 border-0 flex items-center  justify-center gap-6 text-[#C4A77D] rounded-full px-6 py-3 mt-60 shadow-md">
+			<motion.div className="bg-[#25331f7e] backdrop-filter backdrop-blur-sm bg-opacity-30 border-0 flex items-center  justify-center gap-6 text-[#C4A77D] rounded-full px-6 py-3 shadow-md">
 				{["home", "portfolio", "blog"].map((tab, i) => (
 					<TransitionLink
 						href={pageNavigationMap[tab]}

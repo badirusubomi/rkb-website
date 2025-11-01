@@ -56,9 +56,12 @@ export default function RootLayout({
                   className="fixed top-8 right-12 z-20 w-20 h-9 bg-white bg-opacity-20 backdrop-blur-md rounded-lg border border-white border-opacity-30"
                 ></div> */}
 								{/* Menu Button */}
-								<div className="fixed bottom-1 p-0 m-0 z-30 w-full min-h-10">
-									<Navigation activeTab="" />
-								</div>
+								{/* <div
+									className="fixed bottom-1 p-0 m-0 z-1 w-800"
+									id="nav-div-container"
+								> */}
+								<Navigation activeTab="" />
+								{/* </div> */}
 
 								{/* <button
 									className={`${
