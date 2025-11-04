@@ -5,7 +5,7 @@ export default function Footer({ footerColor }: Record<string, string>) {
 	return (
 		<motion.footer>
 		<motion.div
-			className={`relative w-[95vw] max-h-full flex flex-col py-6 px-6 text-${footerColor} bg-[#cc9d68] rounded-xl mt-12 space-y-2`}
+			className={`relative w-[95vw] max-h-full flex flex-col py-6 px-8 text-${footerColor} bg-[#cc9d68] rounded-xl mt-12 space-y-2`}
 		>
 			<p className="text-lg font-light mt-0 mb-2">
 				Inspire me with all the latest RKB Epiphany news
@@ -34,7 +34,7 @@ export default function Footer({ footerColor }: Record<string, string>) {
 			</div>
 		</motion.div>
 
-		<motion.div
+		{/* <motion.div
         initial={{ opacity: 0, y: 50 }}
         whileInView={{ opacity: 1, y: 0 }}
         transition={{ duration: 1.5 }}
@@ -43,7 +43,7 @@ export default function Footer({ footerColor }: Record<string, string>) {
         <p className="text-[16rem] md:text-[18rem] font-light text-[#cc9d68] tracking-tight md:tracking-wider leading-none">
           EPIPHANY
         </p>
-      </motion.div>
+      </motion.div> */}
 		</motion.footer>
 	);
 }
