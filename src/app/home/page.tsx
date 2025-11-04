@@ -1,6 +1,7 @@
 "use client";
 import { motion } from "framer-motion";
 import Image from "next/image";
+import Footer from "../utils/footer/footer";
 
 export default function Home() {
 	const imgUrlFront =
@@ -335,6 +336,8 @@ export default function Home() {
 			<section>
 				<div></div>
 			</section>
+			{/* footer section */}
+			<Footer footerColor="black" />
 		</main>
 	);
 }
