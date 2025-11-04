@@ -3,7 +3,7 @@ import { motion } from "framer-motion";
 
 export default function Footer({ footerColor }: Record<string, string>) {
 	return (
-		<motion.div className="flex flex-col justify-center items-center">
+		<motion.div className="flex flex-col justify-center items-center w-full">
 			<motion.div
 				className={`relative w-[95vw] max-h-full flex flex-col py-6 px-6 text-${footerColor} bg-[#cc9d68] rounded-xl mt-12 mx-3 space-y-2`}
 			>
@@ -34,17 +34,11 @@ export default function Footer({ footerColor }: Record<string, string>) {
 				</div>
 			</motion.div>
 
-			{/* <motion.div
-				initial={{ opacity: 0, y: 50 }}
-				whileInView={{ opacity: 1, y: 0 }}
-				transition={{ duration: 1.5 }}
-				className="h-full bottom-0 left-0 w-full flex justify-center select-none pointer-events-none overflow-hidden"
-			>
-				
-			</motion.div> */}
-			<p className="py-0 px-0 my-0 text-[16rem] md:text-[18rem] font-light text-[#cc9d68] tracking-tight md:tracking-wider leading-none">
-				EPIPHANY
-			</p>
+			<motion.div className="relative my-0 py-0 w-full flex justify-center select-none pointer-events-none overflow-hidden">
+				<p className="relative w-full bottom-[-4rem] text-[25vw] md:text-[18rem] font-light text-[#cc9d68] tracking-tight leading-none text-center">
+					EPIPHANY
+				</p>
+			</motion.div>
 		</motion.div>
 	);
 }
