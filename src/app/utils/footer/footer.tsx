@@ -26,7 +26,7 @@ export default function Footer({ footerColor }: Record<string, string>) {
 				</form>
 
 				{/* Footer Links */}
-				<div className="flex items-center justify-between text-md font-light mt-12 w-full">
+				<div className="flex items-center grid-cols-2 grid-rows-2 md:flex-row justify-between text-md font-light mt-12 w-full">
 					<a href="#">RKB Epiphany</a>
 					<a href="#">Privacy Policy</a>
 					<a href="#">Terms of Service</a>
@@ -34,8 +34,8 @@ export default function Footer({ footerColor }: Record<string, string>) {
 				</div>
 			</motion.div>
 
-			<motion.div className="relative my-0 py-0 w-full flex justify-center select-none pointer-events-none overflow-hidden">
-				<p className="relative w-full bottom-[-4rem] text-[25vw] md:text-[18rem] font-light text-[#cc9d68] tracking-tight leading-none text-center">
+			<motion.div className="relative my-0  w-full flex justify-center select-none pointer-events-none overflow-hidden">
+				<p className="relative w-full bottom-[-4rem] pt-[-10] text-[25vw] md:text-[18rem] font-light text-[#cc9d68] tracking-tight leading-none text-center">
 					EPIPHANY
 				</p>
 			</motion.div>

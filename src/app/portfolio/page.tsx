@@ -78,7 +78,7 @@ export default function Portfolio() {
 			{/* Events Section */}
 			<section
 				id="events"
-				className="relative flex items-center justify-center w-full h-full px-8 gap-16"
+				className="relative flex items-center justify-center w-full h-screen px-8 gap-16"
 			>
 				<motion.div
 					initial={{ opacity: 0, y: 50 }}
@@ -140,7 +140,7 @@ export default function Portfolio() {
 			{/* Products Section */}
 			<section
 				id="products"
-				className="relative flex items-center justify-center w-full h-full px-8 gap-16"
+				className="relative flex items-center justify-center w-full h-screen px-8 gap-16"
 			>
 				<motion.div
 					initial={{ opacity: 0, y: 50 }}
@@ -201,7 +201,7 @@ export default function Portfolio() {
 			{/* Personal Section */}
 			<section
 				id="personal"
-				className="relative flex items-center justify-center w-full h-full px-8 gap-16"
+				className="relative flex items-center justify-center w-full h-screen px-8 gap-16"
 			>
 				<motion.div
 					initial={{ opacity: 0, y: 50 }}
@@ -260,7 +260,7 @@ export default function Portfolio() {
 			{/* Products Section */}
 			<section
 				id="products"
-				className="relative flex items-center justify-center w-full h-full px-8 gap-16"
+				className="relative flex items-center justify-center w-full h-screen px-8 gap-16"
 			>
 				<motion.div
 					initial={{ opacity: 0, y: 50 }}
@@ -321,7 +321,7 @@ export default function Portfolio() {
 			{/* HeadShots Section */}
 			<section
 				id="headShots"
-				className="relative flex items-center justify-center w-full h-full px-8 gap-16"
+				className="relative flex items-center justify-center w-full h-screen px-8 gap-16"
 			>
 				<motion.div
 					initial={{ opacity: 0, y: 50 }}

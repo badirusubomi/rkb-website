@@ -5,7 +5,7 @@ import { X, Plus } from "lucide-react";
 import { TransitionLink } from "../transitionLink";
 
 const pageNavigationMap: Record<string, string> = {
-	home: "/",
+	home: "/home",
 	portfolio: "/portfolio",
 	// "https://book.squareup.com/appointments/s4v957vaozqatr/location/LS4KC4CH63WJV/services",
 	blog: "/blog",
@@ -13,16 +13,17 @@ const pageNavigationMap: Record<string, string> = {
 
 export default function Navigation({ activeTab }: Record<string, string>) {
 	const [menuOpen, setMenuOpen] = useState(false);
+	console.log(activeTab);
 
 	const toggleMenu = () => {
 		setMenuOpen(!menuOpen);
 	};
 
 	return (
-		<div className="fixed bottom-0 z-10 inset-x-0 mx-auto w-fit flex items-center justify-center h-auto py-0 mb-5">
+		<div className="fixed bottom-0 z-40 inset-x-0 mx-auto w-fit flex items-center justify-center h-auto py-0 mb-5">
 			{/* Top rounded rectangle (toggle menu) */}
 			{menuOpen && (
-				<div className="absolute bottom-25 left-1/2 -translate-x-1/2 mt-0 bg-[#25331f7e] backdrop-filter backdrop-blur-sm bg-opacity-30 text-[#C4A77D] rounded-4xl w-[90%] max-w-md p-6 flex flex-col gap-4 shadow-lg z-10 transition-all duration-300 ease-in-out">
+				<div className="absolute bottom-25 left-1/2 z-30 -translate-x-1/2 mt-0 bg-[#25331f7e] backdrop-filter backdrop-blur-sm bg-opacity-30 text-[#C4A77D] rounded-4xl w-[90%] max-w-md p-6 flex flex-col gap-4 shadow-lg transition-all duration-300 ease-in-out">
 					<div className="flex justify-between items-center">
 						<h1 className="text-lg font-semibold">RKB Epiphany</h1>
 						<p className="text-sm opacity-70">&#x2026;slogan</p>
@@ -51,7 +52,7 @@ export default function Navigation({ activeTab }: Record<string, string>) {
 						onClick={toggleMenu}
 					>
 						<div
-							className={`${pageNavigationMap[tab] === activeTab ? "bg-[#F4EDE6]" : "bg-[#2F3B2B]"} rounded-full px-5 py-2 text-sm hover:bg-[#3b4a35] transition`}
+							className={`${tab === activeTab ? "bg-[#F4EDE6]" : "bg-[#2F3B2B]"} rounded-full px-5 py-2 text-sm hover:bg-[#3b4a35] transition`}
 						>
 							{tab.toLocaleLowerCase()}
 						</div>

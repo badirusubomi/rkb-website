@@ -62,7 +62,7 @@ export default function RootLayout({
 									id="nav-div-container"
 								> */}
 								<LogoCard logoSrc={"/rkbAssets/logoWhite.svg"} />
-								<Navigation activeTab={pathname.split("/")[0]} />
+								<Navigation activeTab={pathname.split("/")[1]} />
 								{/* </div> */}
 								{/* <button
 									className={`${
