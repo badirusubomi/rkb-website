@@ -2,6 +2,7 @@
 import { motion } from "framer-motion";
 import Image from "next/image";
 import Footer from "../utils/footer/footer";
+import { LayoutGrid } from "@/src/components/ui/layout-grid";
 
 export default function Home() {
 	const imgUrlFront =
@@ -9,12 +10,37 @@ export default function Home() {
 	const imgUrlBack =
 		"https://images.unsplash.com/photo-1506787497326-c2736dde1bef?ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&q=80&w=692";
 
-	const portFolioImages = [
-		"https://images.unsplash.com/photo-1501594907352-04cda38ebc29?auto=format&fit=crop&q=80&w=500",
-		"https://images.unsplash.com/photo-1529626455594-4ff0802cfb7e?auto=format&fit=crop&q=80&w=500",
-		"https://images.unsplash.com/photo-1504208434309-cb69f4fe52b0?auto=format&fit=crop&q=80&w=500",
-		"https://images.unsplash.com/photo-1503264116251-35a269479413?auto=format&fit=crop&q=80&w=500",
+	const portfolioImages = [
+		{
+			id: 1,
+			//   content: <SkeletonOne />,
+			className: "md:col-span-2",
+			thumbnail:
+				"https://images.unsplash.com/photo-1476231682828-37e571bc172f?q=80&w=3474&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+		},
+		{
+			id: 2,
+			//   content: <SkeletonTwo />,
+			className: "col-span-1",
+			thumbnail:
+				"https://images.unsplash.com/photo-1464457312035-3d7d0e0c058e?q=80&w=3540&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+		},
+		{
+			id: 3,
+			//   content: <SkeletonThree />,
+			className: "col-span-1",
+			thumbnail:
+				"https://images.unsplash.com/photo-1588880331179-bc9b93a8cb5e?q=80&w=3540&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+		},
+		{
+			id: 4,
+			//   content: <SkeletonFour />,
+			className: "md:col-span-2",
+			thumbnail:
+				"https://images.unsplash.com/photo-1475070929565-c985b496cb9f?q=80&w=3540&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+		},
 	];
+
 	return (
 		<main className="flex m-0 p-0 min-h-screen sm:flex-col items-center w-full flex-col justify-center overflow-hidden">
 			{/* hero section */}
@@ -24,13 +50,13 @@ export default function Home() {
 					whileInView={{ opacity: 1, y: 0 }}
 					transition={{ duration: 2 }}
 					viewport={{ once: true }}
-					className="flex w-[95vw] h-[95vh] rounded-xl px-20 py-10 my-0 lg:px-10 mx-0 justify-around gap-30 items-center bg-[#04070070] backdrop-filter backdrop-blur-sm bg-opacity-30 relative overflow-hidden"
+					className="flex flex-col md:flex-row w-[95vw] h-[95vh] rounded-xl px-20 py-10 my-0 lg:px-10 mx-0 justify-around gap-2 md:gap-30 items-center bg-[#04070070] backdrop-filter backdrop-blur-sm bg-opacity-30 relative overflow-hidden"
 				>
 					<motion.div
 						initial={{ opacity: 0, x: -50 }}
 						whileInView={{ opacity: 1, x: 0 }}
 						transition={{ duration: 2 }}
-						className="relative flex flex-col gap-5"
+						className="relative flex flex-col  gap-5"
 					>
 						{/* images */}
 						<motion.div
@@ -70,7 +96,7 @@ export default function Home() {
 								transition: { staggerChildren: 0.7, duration: 1 },
 							},
 						}}
-						className="flex flex-col w-max max-w-lg gap-20 text-white text-3xl lg:text-4xl"
+						className="flex flex-col w-max max-w-lg gap-2 md:gap-20 text-white text-3xl lg:text-4xl"
 					>
 						<motion.h1
 							variants={{ hidden: { opacity: 0 }, visible: { opacity: 1 } }}
@@ -112,13 +138,12 @@ export default function Home() {
 					</motion.h1>
 
 					{/* Image Grid */}
-					<motion.div
+					{/* <motion.div
 						initial={{ opacity: 0 }}
 						whileInView={{ opacity: 1 }}
 						transition={{ delay: 0.3, duration: 3 }}
 						className="grid  grid-cols-1 grid-rows-2 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 w-[50dvw] rounded-4xl h-[70vh] px-5 bg-white py-10"
 					>
-						{/* Large image */}
 						<div className="col-span-2 row-span-2 w-full h-full rounded-xl overflow-hidden">
 							<Image
 								src={portFolioImages[0]}
@@ -129,7 +154,6 @@ export default function Home() {
 							/>
 						</div>
 
-						{/* Smaller stacked images */}
 						<div className="flex flex-col gap-4 w-full h-full">
 							<div className="flex gap-4 h-1/2">
 								<Image
@@ -157,7 +181,8 @@ export default function Home() {
 								/>
 							</div>
 						</div>
-					</motion.div>
+					</motion.div> */}
+					<LayoutGrid cards={portfolioImages} />
 
 					{/* See more */}
 					<motion.h1

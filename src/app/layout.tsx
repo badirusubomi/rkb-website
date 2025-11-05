@@ -6,6 +6,7 @@ import React from "react";
 import { usePathname } from "next/navigation";
 // import { TransitionLink } from "./utils/transitionLink";
 import Navigation from "./utils/navBar/navigation";
+import LogoCard from "./utils/logoCard/logoCard";
 
 const geistSans = Geist({
 	variable: "--font-geist-sans",
@@ -60,9 +61,9 @@ export default function RootLayout({
 									className="fixed bottom-1 p-0 m-0 z-1 w-800"
 									id="nav-div-container"
 								> */}
-								<Navigation activeTab="" />
+								<LogoCard logoSrc={"/rkbAssets/logoWhite.svg"} />
+								<Navigation activeTab={pathname.split("/")[0]} />
 								{/* </div> */}
-
 								{/* <button
 									className={`${
 										menuButtonVisible ? "visible" : "hidden"
@@ -77,7 +78,6 @@ export default function RootLayout({
 								>
 									Menu
 								</button> */}
-
 								{/* Overlay Menu */}
 								{/* {menuOpen && (
 									<div className="fixed inset-0 z-40 bg-black/85 flex flex-col items-end animate-fadeIn">
