@@ -7,7 +7,7 @@ export default function Footer({ footerColor }: Record<string, string>) {
 			<motion.div
 				className={`relative w-[95vw] max-h-full flex flex-col py-6 px-6 text-${footerColor} bg-[#cc9d68] rounded-xl mt-12 mx-3 space-y-2`}
 			>
-				<p className="text-lg font-light mt-0 mb-2">
+				<p className="text-s md:text-lg font-light mt-0 mb-2">
 					Inspire me with all the latest RKB Epiphany news
 				</p>
 
@@ -17,16 +17,16 @@ export default function Footer({ footerColor }: Record<string, string>) {
 						<input
 							type="email"
 							placeholder="Your email"
-							className="px-4 py-2 bg-white rounded-lg w-1/3 text-black focus:outline-none"
+							className="px-4 py-2 bg-white text-sm md:text-xl rounded-lg w-1/3 text-black focus:outline-none"
 						/>
-						<button className="px-4 py-2 bg-[#2a3322] text-[#cc9d68] rounded-lg hover:bg-[#36402b] transition">
+						<button className="text-sm md:text-xl px-4 py-2 bg-[#2a3322] text-[#cc9d68] rounded-lg hover:bg-[#36402b] transition">
 							Subscribe
 						</button>
 					</div>
 				</form>
 
 				{/* Footer Links */}
-				<div className="flex items-center grid-cols-2 grid-rows-2 md:flex-row justify-between text-md font-light mt-12 w-full">
+				<div className="md:flex gap-2 items-center grid grid-cols-2 md:grid-cols-4 justify-between text-xs md:text-md font-light mt-12 w-full">
 					<a href="#">RKB Epiphany</a>
 					<a href="#">Privacy Policy</a>
 					<a href="#">Terms of Service</a>

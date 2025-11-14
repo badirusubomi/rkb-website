@@ -5,9 +5,9 @@ import { cn } from "@/lib/utils";
 
 type Card = {
 	id: number;
-	content: JSX.Element | React.ReactNode | string;
 	className: string;
 	thumbnail: string;
+	content?: JSX.Element | React.ReactNode | string;
 };
 
 export const LayoutGrid = ({ cards }: { cards: Card[] }) => {

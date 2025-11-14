@@ -8,7 +8,11 @@ const pageNavigationMap: Record<string, string> = {
 	home: "/home",
 	portfolio: "/portfolio",
 	// "https://book.squareup.com/appointments/s4v957vaozqatr/location/LS4KC4CH63WJV/services",
-	blog: "/blog",
+	blog: "/home",
+	"About us": "/about",
+	Services: "/services",
+	"Book with us now":
+		"https://book.squareup.com/appointments/s4v957vaozqatr/location/LS4KC4CH63WJV",
 };
 
 export default function Navigation({ activeTab }: Record<string, string>) {
@@ -31,14 +35,19 @@ export default function Navigation({ activeTab }: Record<string, string>) {
 
 					{/* Menu buttons */}
 					<div className="flex flex-col gap-3 mt-3">
-						{["About us", "Portfolio", "Book with us now"].map((item, i) => (
-							<div
-								key={i}
-								className="flex items-center bg-[#ECE5DF] rounded-2xl p-4 cursor-pointer hover:opacity-80 transition"
-							>
-								<div className="w-10 h-10 bg-gray-300 rounded-full mr-3" />
-								<span className="text-black text-lg">{item}</span>
-							</div>
+						{["About us", "Services", "Book with us now"].map((item, i) => (
+							<>
+								<TransitionLink
+									href={pageNavigationMap[item]}
+									key={`${i}-bigBox`}
+									onClick={toggleMenu}
+								>
+									<div className="flex items-center bg-[#ECE5DF] rounded-2xl p-4 cursor-pointer hover:opacity-80 transition">
+										<div className="w-10 h-10 bg-gray-300 rounded-full mr-3" />
+										<span className="text-black text-lg">{item}</span>
+									</div>
+								</TransitionLink>
+							</>
 						))}
 					</div>
 				</div>
@@ -60,7 +69,7 @@ export default function Navigation({ activeTab }: Record<string, string>) {
 				))}
 				<button
 					onClick={toggleMenu}
-					className="w-8 h-8 flex items-center justify-center rounded-full bg-[#C4A77D] text-[#545C4A] hover:opacity-80 transition hover:target:"
+					className="w-8 h-8 flex items-center cursor-pointer justify-center rounded-full bg-[#C4A77D] text-[#545C4A] hover:opacity-80 transition hover:target:"
 				>
 					{menuOpen ? <X size={20} /> : <Plus size={20} />}
 				</button>

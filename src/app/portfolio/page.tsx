@@ -4,6 +4,7 @@ import Image from "next/image";
 import Modal from "../utils/modal/modal";
 import Footer from "../utils/footer/footer";
 import { useState } from "react";
+import ScrollIndicator from "../utils/scrollIndicator/scrollIndicator";
 
 export default function Portfolio() {
 	const [isModalOpen, setModalOpen] = useState(false);
@@ -75,6 +76,7 @@ export default function Portfolio() {
 
 	return (
 		<div className="flex flex-col items-center justify-center min-h-screen snap-y snap-mandatory">
+			<ScrollIndicator svgSrc="/rkbAssets/scrollDownIndicator.svg" />
 			{/* Events Section */}
 			<section
 				id="events"

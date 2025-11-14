@@ -1,5 +1,5 @@
 "use client";
-import { FormEvent, useRef, useState, useEffect } from "react";
+import { useRef, useState, useEffect } from "react";
 
 export default function Home() {
 	const leftVideoRef = useRef<HTMLVideoElement>(null);
@@ -11,11 +11,6 @@ export default function Home() {
 	useEffect(() => {
 		setHasMounted(true);
 	}, []);
-
-	async function submitEmail(event: FormEvent<HTMLFormElement>) {
-		event.preventDefault();
-		console.log(event.currentTarget);
-	}
 
 	const handleLeftPause = () => {
 		const video = leftVideoRef.current;
@@ -50,7 +45,7 @@ export default function Home() {
 						{/* Left Panel */}
 						<div
 							// onMouseLeave={handleLeftPause}
-							className="flex-1 bg-[#d9d9d9] flex flex-col font-serif justify-between items-center relative min-h-0 overflow-hidden"
+							className="flex-1 bg-[#d9d9d9] flex flex-col justify-between items-center relative min-h-0 overflow-hidden"
 						>
 							<video
 								src="http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/BigBuckBunny.mp4#t=30"
@@ -123,7 +118,7 @@ export default function Home() {
 						{/* Center Logo */}
 						<div className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 z-10 pointer-events-none select-none">
 							<span
-								className="text-[9vw] sm:text-[5vw] md:text-[6vw] font-serif text-white tracking-widest"
+								className="text-[9vw] sm:text-[5vw] md:text-[6vw] text-white tracking-widest"
 								style={{ letterSpacing: "0.05em" }}
 							>
 								RKB EPIPHANY
