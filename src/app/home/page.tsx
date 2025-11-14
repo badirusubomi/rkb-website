@@ -114,13 +114,7 @@ export default function Home() {
 
 			{/* hero section */}
 			<section className="w-dvw h-screen flex justify-center items-center">
-				<motion.div
-					initial={{ opacity: 0, y: 50 }}
-					whileInView={{ opacity: 1, y: 0 }}
-					transition={{ duration: 2 }}
-					viewport={{ once: true }}
-					className="flex flex-col md:flex-row w-[95vw] h-[95vh] rounded-xl px-20 py-10 my-0 lg:px-10 mx-0 justify-around gap-2 md:gap-30 items-center bg-[#04070070] backdrop-filter backdrop-blur-sm bg-opacity-30 relative overflow-hidden"
-				>
+				<div className="flex flex-col md:flex-row w-[95vw] h-[95vh] rounded-xl px-20 py-10 my-0 lg:px-10 mx-0 justify-around gap-2 md:gap-30 items-center bg-[#04070070] backdrop-filter backdrop-blur-sm bg-opacity-30 relative overflow-hidden">
 					<motion.div
 						initial={{ opacity: 0, x: -50 }}
 						whileInView={{ opacity: 1, x: 0 }}
@@ -185,18 +179,12 @@ export default function Home() {
 							Let us tell your story
 						</motion.h1>
 					</motion.div>
-				</motion.div>
+				</div>
 			</section>
 
 			{/* portfolio section */}
 			<section className=" w-dvw h-screen flex justify-center items-center">
-				<motion.div
-					initial={{ opacity: 0, y: 50 }}
-					whileInView={{ opacity: 1, y: 0 }}
-					transition={{ duration: 2 }}
-					viewport={{ once: true }}
-					className="flex flex-col items-center justify-center w-[95vw] h-[95vh] rounded-xl px-20 py-10 lg:px-10 gap-2 bg-[#04070070] backdrop-filter backdrop-blur-sm bg-opacity-30 relative overflow-hidden"
-				>
+				<div className="flex flex-col items-center justify-center w-[95vw] h-[95vh] rounded-xl px-20 py-10 lg:px-10 gap-2 bg-[#04070070] backdrop-filter backdrop-blur-sm bg-opacity-30 relative overflow-hidden">
 					<motion.h1
 						initial={{ opacity: 0, y: 20 }}
 						whileInView={{ opacity: 1, y: 0 }}
@@ -274,7 +262,7 @@ export default function Home() {
 							see more
 						</motion.a>
 					</motion.h1>
-				</motion.div>
+				</div>
 			</section>
 
 			{/* inspiring text 1 */}
