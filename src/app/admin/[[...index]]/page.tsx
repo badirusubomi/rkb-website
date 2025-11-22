@@ -1,22 +1,14 @@
 "use client";
 import config from "@/sanity.config";
-import { Studio } from "sanity";
-import { useState, useEffect } from "react";
+// import { Studio } from "sanity";
+import { NextStudio } from "next-sanity/studio";
 
 export default function AdminPage() {
-	const [hasMounted, setHasMounted] = useState(false);
-
-	useEffect(() => {
-		setHasMounted(true);
-	}, []);
-
 	return (
 		<>
-			{hasMounted && (
-				<div className="h-full min-h-screen">
-					<Studio config={config} />
-				</div>
-			)}
+			<div className="h-full min-h-screen">
+				<NextStudio config={config} />
+			</div>
 		</>
 	);
 }

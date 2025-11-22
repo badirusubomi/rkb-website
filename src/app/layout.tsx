@@ -18,6 +18,10 @@ const geistMono = Geist_Mono({
 	subsets: ["latin"],
 });
 
+// Needs to be updated everytime a new page is added; Bad system I know, but it'll have to do for now
+
+const pageUrls = ["/home", "/services", "/portfolio", "/blog", "/admin"];
+
 export default function RootLayout({
 	children,
 }: Readonly<{
@@ -25,9 +29,8 @@ export default function RootLayout({
 }>) {
 	const pathname = usePathname();
 	const isAdmin = pathname.startsWith("/admin");
+	const isLanding = pageUrls.filter((url) => pathname === url).length == 0;
 
-	// const [menuOpen, setMenuOpen] = React.useState(false);
-	// const [menuButtonVisible, setMenuButtonVisible] = React.useState(true);
 	const [hasMounted, setHasMounted] = React.useState(false);
 
 	React.useEffect(() => {
@@ -53,66 +56,12 @@ export default function RootLayout({
 					<>
 						{hasMounted && (
 							<>
-								{/* <div
-                  className="fixed top-8 right-12 z-20 w-20 h-9 bg-white bg-opacity-20 backdrop-blur-md rounded-lg border border-white border-opacity-30"
-                ></div> */}
-								{/* Menu Button */}
-								{/* <div
-									className="fixed bottom-1 p-0 m-0 z-1 w-800"
-									id="nav-div-container"
-								> */}
+								{!isLanding && (
+									<>
+										<Navigation activeTab={pathname.split("/")[1]} />
+									</>
+								)}
 								<LogoCard logoSrc={"/rkbAssets/logoWhite.svg"} />
-								<Navigation activeTab={pathname.split("/")[1]} />
-								{/* </div> */}
-								{/* <button
-									className={`${
-										menuButtonVisible ? "visible" : "hidden"
-									} fixed top-8 right-12 z-30 text-white text-sm font-light tracking-wide hover:underline focus:outline-none
-                  px-4 py-1 ${pathname.startsWith("/events") && "menu-text"}`}
-									onClick={() => {
-										console.log(pathname);
-										setMenuOpen(true);
-										setMenuButtonVisible(false);
-									}}
-									style={{ letterSpacing: "0.05em" }}
-								>
-									Menu
-								</button> */}
-								{/* Overlay Menu */}
-								{/* {menuOpen && (
-									<div className="fixed inset-0 z-40 bg-black/85 flex flex-col items-end animate-fadeIn">
-										<button
-											className="m-8 text-white text-lg font-light hover:underline focus:outline-none"
-											onClick={() => {
-												setMenuOpen(false);
-												setMenuButtonVisible(true);
-											}}
-										>
-											Close
-										</button>
-										<nav className="w-full flex flex-col items-center justify-center flex-1 gap-8">
-											<TransitionLink
-												href="/"
-												// className="text-white text-2xl font-light hover:underline"
-											>
-												Home
-											</TransitionLink>
-											<a
-												href="/about"
-												className="text-white text-2xl font-light hover:underline"
-											>
-												About
-											</a>
-
-											<a
-												href="/admin"
-												className="text-white text-2xl font-light hover:underline"
-											>
-												Admin
-											</a>
-										</nav>
-									</div>
-								)} */}
 							</>
 						)}
 						{children}

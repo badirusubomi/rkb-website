@@ -8,7 +8,7 @@ const pageNavigationMap: Record<string, string> = {
 	home: "/home",
 	portfolio: "/portfolio",
 	// "https://book.squareup.com/appointments/s4v957vaozqatr/location/LS4KC4CH63WJV/services",
-	blog: "/home",
+	blog: "/blog",
 	"About us": "/about",
 	Services: "/services",
 	"Book with us now":
@@ -17,7 +17,6 @@ const pageNavigationMap: Record<string, string> = {
 
 export default function Navigation({ activeTab }: Record<string, string>) {
 	const [menuOpen, setMenuOpen] = useState(false);
-	console.log(activeTab);
 
 	const toggleMenu = () => {
 		setMenuOpen(!menuOpen);

@@ -4,22 +4,11 @@ import { structureTool } from "sanity/structure";
 import { visionTool } from "@sanity/vision";
 
 const config = defineConfig({
-	projectId: "9i8hmeti", //change
-
-	name: "default",
-
-	dataset: "production",
-
-	title: "games-night-website", //change
-
-	apiVersion: "2025-08-07", //change
-
+	projectId: process.env.NEXT_PUBLIC_SANITY_PROJECT_ID!,
+	dataset: process.env.NEXT_PUBLIC_SANITY_DATASET || "production",
+	apiVersion: process.env.NEXT_PUBLIC_SANITY_API_VERSION || "2025-11-22",
 	basePath: "/admin",
-
-	token: process.env.SANITY_API_KEY,
-
 	plugins: [structureTool(), visionTool()],
-
 	schema: {
 		types: schemaTypes,
 	},
