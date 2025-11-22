@@ -1,5 +1,5 @@
 import Image from "next/image";
-import { useState, useEffect, useCallback } from "react";
+import { useState, useEffect, useCallback, useRef, use } from "react";
 
 export default function Modal({
 	isOpen,
@@ -10,6 +10,7 @@ export default function Modal({
 	onClose: () => void;
 	pictures: { id: number; url: string }[];
 }) {
+	const modalRef = useRef<HTMLDivElement | null>(null);
 	const [currentIndex, setCurrentIndex] = useState(0);
 
 	const handlePrev = useCallback(() => {
@@ -19,6 +20,29 @@ export default function Modal({
 	const handleNext = useCallback(() => {
 		setCurrentIndex((prev) => (prev === pictures.length - 1 ? 0 : prev + 1));
 	}, [pictures.length]);
+
+	// Close modal on outside click or Escape key
+	useEffect(() => {
+		if (!isOpen) return;
+
+		function handlePointerDown(e: MouseEvent | TouchEvent) {
+			const target = e.target as Node | null;
+			if (modalRef.current && target && !modalRef.current.contains(target)) {
+				onClose();
+			}
+		}
+		function handleKey(e: KeyboardEvent) {
+			if (e.key === "Escape") onClose();
+		}
+		document.addEventListener("mousedown", handlePointerDown);
+		document.addEventListener("touchstart", handlePointerDown);
+		document.addEventListener("keydown", handleKey);
+		return () => {
+			document.removeEventListener("mousedown", handlePointerDown);
+			document.removeEventListener("touchstart", handlePointerDown);
+			document.removeEventListener("keydown", handleKey);
+		};
+	}, [isOpen, onClose]);
 
 	// Keyboard navigation with useEffect
 	useEffect(() => {
@@ -38,7 +62,11 @@ export default function Modal({
 
 	return (
 		<div className="fixed inset-0 z-50 flex items-center justify-center bg-black/70 backdrop-blur-md">
-			<div className="rounded-lg shadow-lg p-4 max-w-5xl w-[90%]">
+			<div 
+				ref={modalRef}
+				role="dialog"
+				aria-modal="true"
+				className="rounded-lg shadow-lg p-4 max-w-5xl w-[90%]">
 				{/* Close Button */}
 				<button
 					onClick={onClose}
