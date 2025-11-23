@@ -8,9 +8,18 @@ import ScrollIndicator from "../utils/scrollIndicator/scrollIndicator";
 
 export default function Portfolio() {
 	const [isModalOpen, setModalOpen] = useState(false);
+	const [currentPictures, setCurrentPictures] = useState<
+		{ id: number; url: string }[]
+	>([]);
 
 	const handleClose = () => {
 		setModalOpen(false);
+		setCurrentPictures([]);
+	};
+
+	const openModalWith = (pictures: { id: number; url: string }[]) => {
+		setCurrentPictures(pictures);
+		setModalOpen(true);
 	};
 	const eventPictures = [
 		{
@@ -72,7 +81,11 @@ export default function Portfolio() {
 		},
 	];
 
-	const positions = ["top-0 left-20", "top-10 left-10", "top-20 left-0"];
+	const positions = [
+		"sm:top-0 sm:left-10 top-0 left-4",
+		"sm:top-5 sm:left-5 top-2 left-2",
+		"sm:top-10 sm:left-0 top-4 left-0",
+	];
 
 	return (
 		<div className="flex flex-col items-center justify-center min-h-screen snap-y snap-mandatory">
@@ -80,14 +93,14 @@ export default function Portfolio() {
 			{/* Events Section */}
 			<section
 				id="events"
-				className="relative flex items-center justify-center w-full h-screen px-8 gap-16"
+				className="relative flex items-center justify-center w-full h-[95vh] px-4 sm:px-8 gap-8"
 			>
 				<motion.div
 					initial={{ opacity: 0, y: 50 }}
 					whileInView={{ opacity: 1, y: 0 }}
 					transition={{ duration: 2 }}
 					viewport={{ once: true }}
-					className="overlap-container gap-2"
+					className="overlap-container flex-col-reverse sm:flex-row"
 				>
 					{/* text */}
 					<motion.div
@@ -95,9 +108,9 @@ export default function Portfolio() {
 						whileInView={{ opacity: 1, y: -40 }}
 						transition={{ duration: 1 }}
 						viewport={{ once: true }}
-						className="max-w-lg text-[#cc9d68] space-y-8"
+						className="max-w-lg w-[90vw] sm:max-w-lg text-[#cc9d68] space-y-8"
 					>
-						<motion.h1 className="text-4xl font-light leading-snug">
+						<motion.h1 className="text-base sm:text-lg md:text-2xl font-light leading-snug">
 							<q>
 								Where ideas turn into milestones and every handshake tells a
 								story
@@ -108,14 +121,14 @@ export default function Portfolio() {
 						<motion.button
 							whileHover={{ scale: 1.05 }}
 							viewport={{ once: true }}
-							className="px-6 py-3 bg-[#2a3322] text-[#cc9d68] rounded-lg text-lg hover:bg-[#36402b] transition cursor-pointer"
+							className="px-3 sm:px-4 py-1.5 sm:py-2 bg-[#2a3322] text-[#cc9d68] rounded-lg text-xs sm:text-sm md:text-base hover:bg-[#36402b] transition cursor-pointer"
 						>
 							Book your events here
 						</motion.button>
 					</motion.div>
 
 					{/* images container */}
-					<div className="relative w-[750px] h-[500px] sm:w-[800px] sm:h-[550px] lg:w-[900px] lg:h-[600px]">
+					<div className="relative w-[95vw] sm:w-screen md:w-[70vw] lg:w-[700px] h-[35vh] sm:h-[45vh] md:h-[60vh] lg:h-[450px]">
 						{/* images */}
 						{eventPictures.map((pic, index) => (
 							<motion.div
@@ -130,8 +143,8 @@ export default function Portfolio() {
 									src={pic.url}
 									alt={`Event picture ${index + 1}`}
 									fill
-									className="object-cover rounded-xl shadow-lg cursor-pointer"
-									onClick={() => setModalOpen(true)}
+									className="object-contain sm:object-cover rounded-xl shadow-lg cursor-pointer"
+									onClick={() => openModalWith(eventPictures)}
 								/>
 							</motion.div>
 						))}
@@ -142,17 +155,17 @@ export default function Portfolio() {
 			{/* Products Section */}
 			<section
 				id="products"
-				className="relative flex items-center justify-center w-full h-screen px-8 gap-16"
+				className="relative flex items-center justify-center w-full h-[95vh] px-4 sm:px-8 gap-8"
 			>
 				<motion.div
 					initial={{ opacity: 0, y: 50 }}
 					whileInView={{ opacity: 1, y: 0 }}
 					transition={{ duration: 2 }}
 					viewport={{ once: true }}
-					className="overlap-container gap-2"
+					className="overlap-container flex-col sm:flex-row"
 				>
 					{/* images container */}
-					<div className="relative w-[750px] h-[500px] sm:w-[800px] sm:h-[550px] lg:w-[900px] lg:h-[600px]">
+					<div className="relative w-[95vw] sm:w-screen md:w-[70vw] lg:w-[700px] h-[35vh] sm:h-[45vh] md:h-[60vh] lg:h-[450px]">
 						{/* images */}
 						{productPictures.map((pic, index) => (
 							<motion.div
@@ -167,8 +180,8 @@ export default function Portfolio() {
 									src={pic.url}
 									alt={`Product picture ${index + 1}`}
 									fill
-									className="object-cover rounded-xl shadow-lg cursor-pointer"
-									onClick={() => setModalOpen(true)}
+									className="object-contain sm:object-cover rounded-xl shadow-lg cursor-pointer"
+									onClick={() => openModalWith(productPictures)}
 								/>
 							</motion.div>
 						))}
@@ -179,9 +192,9 @@ export default function Portfolio() {
 						whileInView={{ opacity: 1, y: -40 }}
 						transition={{ duration: 1 }}
 						viewport={{ once: true }}
-						className="max-w-lg text-[#cc9d68] space-y-8"
+						className="max-w-lg w-[90vw] sm:max-w-lg text-[#cc9d68] space-y-8"
 					>
-						<motion.h1 className="text-4xl font-light leading-snug">
+						<motion.h1 className="text-base sm:text-lg md:text-2xl font-light leading-snug">
 							<q>
 								Objects reimagined — crafted with light to speak louder than
 								words
@@ -192,7 +205,7 @@ export default function Portfolio() {
 						<motion.button
 							whileHover={{ scale: 1.05 }}
 							viewport={{ once: true }}
-							className="px-6 py-3 bg-[#2a3322] text-[#cc9d68] rounded-lg text-lg hover:bg-[#36402b] transition cursor-pointer"
+							className="px-3 sm:px-4 py-1.5 sm:py-2 bg-[#2a3322] text-[#cc9d68] rounded-lg text-xs sm:text-sm md:text-base hover:bg-[#36402b] transition cursor-pointer"
 						>
 							Book product photography here
 						</motion.button>
@@ -203,14 +216,14 @@ export default function Portfolio() {
 			{/* Personal Section */}
 			<section
 				id="personal"
-				className="relative flex items-center justify-center w-full h-screen px-8 gap-16"
+				className="relative flex items-center justify-center w-full h-[95vh] px-4 sm:px-8 gap-8"
 			>
 				<motion.div
 					initial={{ opacity: 0, y: 50 }}
 					whileInView={{ opacity: 1, y: 0 }}
 					transition={{ duration: 2 }}
 					viewport={{ once: true }}
-					className="overlap-container gap-2"
+					className="overlap-container flex-col-reverse sm:flex-row"
 				>
 					{/* text */}
 					<motion.div
@@ -218,9 +231,9 @@ export default function Portfolio() {
 						whileInView={{ opacity: 1, y: -40 }}
 						transition={{ duration: 1 }}
 						viewport={{ once: true }}
-						className="max-w-lg text-[#cc9d68] space-y-8"
+						className="max-w-lg w-[90vw] sm:max-w-lg text-[#cc9d68] space-y-8"
 					>
-						<motion.h1 className="text-4xl font-light leading-snug">
+						<motion.h1 className="text-base sm:text-lg md:text-2xl font-light leading-snug">
 							<q>A moment of expression where personality becomes art</q>
 						</motion.h1>
 
@@ -228,14 +241,14 @@ export default function Portfolio() {
 						<motion.button
 							whileHover={{ scale: 1.05 }}
 							viewport={{ once: true }}
-							className="px-6 py-3 bg-[#2a3322] text-[#cc9d68] rounded-lg text-lg hover:bg-[#36402b] transition cursor-pointer"
+							className="px-3 sm:px-4 py-1.5 sm:py-2 bg-[#2a3322] text-[#cc9d68] rounded-lg text-xs sm:text-sm md:text-base hover:bg-[#36402b] transition cursor-pointer"
 						>
 							Book your personal photoshoots here
 						</motion.button>
 					</motion.div>
 
 					{/* images container */}
-					<div className="relative w-[750px] h-[500px] sm:w-[800px] sm:h-[550px] lg:w-[900px] lg:h-[600px]">
+					<div className="relative w-[95vw] sm:w-screen md:w-[70vw] lg:w-[700px] h-[35vh] sm:h-[45vh] md:h-[60vh] lg:h-[450px]">
 						{/* images */}
 						{personalPictures.map((pic, index) => (
 							<motion.div
@@ -250,8 +263,8 @@ export default function Portfolio() {
 									src={pic.url}
 									alt={`Personal picture ${index + 1}`}
 									fill
-									className="object-cover rounded-xl shadow-lg cursor-pointer"
-									onClick={() => setModalOpen(true)}
+									className="object-contain sm:object-cover rounded-xl shadow-lg cursor-pointer"
+									onClick={() => openModalWith(personalPictures)}
 								/>
 							</motion.div>
 						))}
@@ -262,17 +275,17 @@ export default function Portfolio() {
 			{/* Products Section */}
 			<section
 				id="products"
-				className="relative flex items-center justify-center w-full h-screen px-8 gap-16"
+				className="relative flex items-center justify-center w-full h-[95vh] px-4 sm:px-8 gap-8"
 			>
 				<motion.div
 					initial={{ opacity: 0, y: 50 }}
 					whileInView={{ opacity: 1, y: 0 }}
 					transition={{ duration: 2 }}
 					viewport={{ once: true }}
-					className="overlap-container gap-2"
+					className="overlap-container flex-col sm:flex-row"
 				>
 					{/* images container */}
-					<div className="relative w-[750px] h-[500px] sm:w-[800px] sm:h-[550px] lg:w-[900px] lg:h-[600px]">
+					<div className="relative w-[95vw] sm:w-screen md:w-[70vw] lg:w-[700px] h-[35vh] sm:h-[45vh] md:h-[60vh] lg:h-[450px]">
 						{/* images */}
 						{productPictures.map((pic, index) => (
 							<motion.div
@@ -287,8 +300,8 @@ export default function Portfolio() {
 									src={pic.url}
 									alt={`Product picture ${index + 1}`}
 									fill
-									className="object-cover rounded-xl shadow-lg cursor-pointer"
-									onClick={() => setModalOpen(true)}
+									className="object-contain sm:object-cover rounded-xl shadow-lg cursor-pointer"
+									onClick={() => openModalWith(productPictures)}
 								/>
 							</motion.div>
 						))}
@@ -299,9 +312,9 @@ export default function Portfolio() {
 						whileInView={{ opacity: 1, y: -40 }}
 						transition={{ duration: 1 }}
 						viewport={{ once: true }}
-						className="max-w-lg text-[#cc9d68] space-y-8"
+						className="max-w-lg w-[90vw] sm:max-w-lg text-[#cc9d68] space-y-8"
 					>
-						<motion.h1 className="text-4xl font-light leading-snug">
+						<motion.h1 className="text-base sm:text-lg md:text-2xl font-light leading-snug">
 							<q>
 								Objects reimagined — crafted with light to speak louder than
 								words
@@ -312,7 +325,7 @@ export default function Portfolio() {
 						<motion.button
 							whileHover={{ scale: 1.05 }}
 							viewport={{ once: true }}
-							className="px-6 py-3 bg-[#2a3322] text-[#cc9d68] rounded-lg text-lg hover:bg-[#36402b] transition cursor-pointer"
+							className="px-3 sm:px-4 py-1.5 sm:py-2 bg-[#2a3322] text-[#cc9d68] rounded-lg text-xs sm:text-sm md:text-base hover:bg-[#36402b] transition cursor-pointer"
 						>
 							Book product photography here
 						</motion.button>
@@ -323,14 +336,14 @@ export default function Portfolio() {
 			{/* HeadShots Section */}
 			<section
 				id="headShots"
-				className="relative flex items-center justify-center w-full h-screen px-8 gap-16"
+				className="relative flex items-center justify-center w-full h-[95vh] px-4 sm:px-8 gap-8"
 			>
 				<motion.div
 					initial={{ opacity: 0, y: 50 }}
 					whileInView={{ opacity: 1, y: 0 }}
 					transition={{ duration: 2 }}
 					viewport={{ once: true }}
-					className="overlap-container gap-2"
+					className="overlap-container flex-col-reverse sm:flex-row"
 				>
 					{/* text */}
 					<motion.div
@@ -338,9 +351,9 @@ export default function Portfolio() {
 						whileInView={{ opacity: 1, y: -40 }}
 						transition={{ duration: 1 }}
 						viewport={{ once: true }}
-						className="max-w-lg text-[#cc9d68] space-y-8"
+						className="max-w-lg w-[90vw] sm:max-w-lg text-[#cc9d68] space-y-8"
 					>
-						<motion.h1 className="text-4xl font-light leading-snug">
+						<motion.h1 className="text-base sm:text-lg md:text-2xl font-light leading-snug">
 							<q>
 								Confidence&#x2C; presence&#x2C; professionalism captured in a
 								single frame
@@ -351,14 +364,14 @@ export default function Portfolio() {
 						<motion.button
 							whileHover={{ scale: 1.05 }}
 							viewport={{ once: true }}
-							className="px-6 py-3 bg-[#2a3322] text-[#cc9d68] rounded-lg text-lg hover:bg-[#36402b] transition cursor-pointer"
+							className="px-3 sm:px-4 py-1.5 sm:py-2 bg-[#2a3322] text-[#cc9d68] rounded-lg text-xs sm:text-sm md:text-base hover:bg-[#36402b] transition cursor-pointer"
 						>
 							Book your head shots here
 						</motion.button>
 					</motion.div>
 
 					{/* images container */}
-					<div className="relative w-[750px] h-[500px] sm:w-[800px] sm:h-[550px] lg:w-[900px] lg:h-[600px]">
+					<div className="relative w-[95vw] sm:w-screen md:w-[70vw] lg:w-[700px] h-[35vh] sm:h-[45vh] md:h-[60vh] lg:h-[450px]">
 						{/* images */}
 						{headShots.map((pic, index) => (
 							<motion.div
@@ -373,8 +386,8 @@ export default function Portfolio() {
 									src={pic.url}
 									alt={`Head shot ${index + 1}`}
 									fill
-									className="object-cover rounded-xl shadow-lg cursor-pointer"
-									onClick={() => setModalOpen(true)}
+									className="object-contain sm:object-cover rounded-xl shadow-lg cursor-pointer"
+									onClick={() => openModalWith(headShots)}
 								/>
 							</motion.div>
 						))}
@@ -382,26 +395,7 @@ export default function Portfolio() {
 				</motion.div>
 			</section>
 
-			<Modal
-				isOpen={isModalOpen}
-				onClose={handleClose}
-				pictures={eventPictures}
-			/>
-			<Modal
-				isOpen={isModalOpen}
-				onClose={handleClose}
-				pictures={productPictures}
-			/>
-			<Modal
-				isOpen={isModalOpen}
-				onClose={handleClose}
-				pictures={personalPictures}
-			/>
-			<Modal
-				isOpen={isModalOpen}
-				onClose={handleClose}
-				pictures={headShots}
-			/>
+			<Modal isOpen={isModalOpen} onClose={handleClose} pictures={currentPictures} />
 
 			<Footer footerColor="black" />
 		</div>
