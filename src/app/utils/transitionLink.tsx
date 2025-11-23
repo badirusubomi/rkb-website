@@ -19,6 +19,7 @@ function sleep(ms: number): Promise<void> {
 export const TransitionLink: React.FC<TransitionLinkProps> = ({
 	children,
 	href,
+	onClick,
 	...props
 }) => {
 	const router = useRouter();
@@ -26,6 +27,10 @@ export const TransitionLink: React.FC<TransitionLinkProps> = ({
 	const handleTransition = async (
 		e: React.MouseEvent<HTMLAnchorElement, MouseEvent>
 	) => {
+		if (onClick) {
+			onClick(e);
+		}
+
 		e.preventDefault();
 		const body = document.querySelector("body");
 
