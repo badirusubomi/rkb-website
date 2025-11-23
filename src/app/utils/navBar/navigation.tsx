@@ -39,7 +39,11 @@ export default function Navigation({ activeTab }: Record<string, string>) {
 								<TransitionLink
 									href={pageNavigationMap[item]}
 									key={`${i}-bigBox`}
-									onClick={toggleMenu}
+									onClick={() => {
+										if (menuOpen) {
+											toggleMenu();
+										}
+									}}
 								>
 									<div className="flex items-center bg-[#ECE5DF] rounded-2xl p-4 cursor-pointer hover:opacity-80 transition">
 										<div className="w-10 h-10 bg-gray-300 rounded-full mr-3" />
@@ -57,7 +61,11 @@ export default function Navigation({ activeTab }: Record<string, string>) {
 					<TransitionLink
 						href={pageNavigationMap[tab]}
 						key={i}
-						onClick={toggleMenu}
+						onClick={() => {
+							if (menuOpen) {
+								toggleMenu();
+							}
+						}}
 					>
 						<div
 							className={`${tab === activeTab ? "bg-[#F4EDE6]" : "bg-[#2F3B2B]"} rounded-full px-5 py-2 text-sm hover:bg-[#3b4a35] transition`}

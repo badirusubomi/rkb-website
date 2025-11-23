@@ -20,14 +20,7 @@ const geistMono = Geist_Mono({
 
 // Needs to be updated everytime a new page is added; Bad system I know, but it'll have to do for now
 
-const pageUrls = [
-	"/home",
-	"/about",
-	"/services",
-	"/portfolio",
-	"/blog",
-	"/admin",
-];
+const pageUrls = ["home", "about", "services", "portfolio", "blog", "admin"];
 
 export default function RootLayout({
 	children,
@@ -36,7 +29,8 @@ export default function RootLayout({
 }>) {
 	const pathname = usePathname();
 	const isAdmin = pathname.startsWith("/admin");
-	const isLanding = pageUrls.filter((url) => pathname === url).length == 0;
+	const isLanding =
+		pageUrls.filter((url) => pathname.split("/")[1] === url).length == 0;
 
 	const [hasMounted, setHasMounted] = React.useState(false);
 

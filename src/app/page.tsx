@@ -10,6 +10,7 @@ export default function Home() {
 	const [leftPaused, setLeftPaused] = useState(false);
 	const [rightPaused, setRightPaused] = useState(false);
 	const [isNavigating, setIsNavigating] = useState(false);
+	// const scrollDeltaThreshold = 3; // Minimum scroll distance to trigger navigation
 
 	const router = useRouter();
 
@@ -52,10 +53,12 @@ export default function Home() {
 		// Attach the 'wheel' event listener to detect scrolling
 		// 'wheel' is better for detecting scroll intent on a non-scrollable container
 		panel.addEventListener("wheel", handleScroll, { passive: false });
+		panel.addEventListener("drag", handleScroll);
 
 		// Clean up the event listener when the component unmounts
 		return () => {
 			panel.removeEventListener("wheel", handleScroll);
+			panel.removeEventListener("drag", handleScroll);
 		};
 	}, [router, isNavigating]); // Re-run effect if router or navigation state changes
 
