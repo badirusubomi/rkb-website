@@ -139,7 +139,7 @@ export default function Home() {
 								Photography
 							</span>
 							<a
-								href="#"
+								href="/home"
 								className="text-xs text-white/80 underline"
 							>
 								View More
@@ -219,7 +219,7 @@ export default function Home() {
 								Creative Services
 							</span>
 							<a
-								href="#"
+								href="/home"
 								className="text-xs text-white/80 underline"
 							>
 								View more

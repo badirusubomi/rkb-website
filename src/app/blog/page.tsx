@@ -20,7 +20,7 @@ export default async function Blog() {
 						>
 							<a
 								href={`/blog/${blog._id}`}
-								className="text-white text-2xl font-light hover:underline"
+								className="text-white text-2xl underline font-light hover:underline"
 							>
 								<h2 className="text-xl font-semibold">{blog.title}</h2>
 
