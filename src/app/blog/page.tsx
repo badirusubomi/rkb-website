@@ -11,15 +11,9 @@ export default async function Blog() {
 	return (
 		<div className="flex flex-col items-center justify-center min-h-screen snap-y snap-mandatory">
 			<ScrollIndicator svgSrc="/rkbAssets/scrollDownIndicator.svg" />
-			<div
-				// initial={{ opacity: 0, y: 50 }}
-				// whileInView={{ opacity: 1, y: 0 }}
-				// transition={{ duration: 2 }}
-				// viewport={{ once: true }}
-				className="blog-container w-screen h-screen flex flex-col align-middle justify-center"
-			>
+			<div className="flex flex-col w-[70vw] h-[70vh] mt-[100px] rounded-xl py-20 lg:px-10 mx-0 justify-items-start md:gap-30 items-center bg-[#04070070] backdrop-filter backdrop-blur-sm bg-opacity-30 relative overflow-hidden">
 				<ul className="flex flex-col align-middle justify-center gap-y-4">
-					{blogs?.map((blog: Any) => (
+					{blogs.splice(0, 8)?.map((blog: Any) => (
 						<li
 							className="hover:underline"
 							key={blog._id}
@@ -45,30 +39,3 @@ export default async function Blog() {
 		</div>
 	);
 }
-// return (
-// 	<div className="font-mono grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20">
-// 		<h3>Current Events</h3>
-// 		<ul className="flex flex-col align-middle justify-center gap-y-4">
-// 			{blogs?.map((blog: Any) => (
-// 				<li
-// 					className="hover:underline"
-// 					key={blog._id}
-// 				>
-// 					<a
-// 						href={`/blog/${blog._id}`}
-// 						className="text-white text-2xl font-light hover:underline"
-// 					>
-// 						<h2 className="text-xl font-semibold">{blog.title}</h2>
-
-// 						<p className="text-white text-sm">
-// 							{blog.content?.length > 100
-// 								? blog.content.slice(0, 100) + ". . ."
-// 								: blog.content}
-// 						</p>
-// 					</a>
-// 				</li>
-// 			))}
-// 		</ul>
-// 	</div>
-// );
-// }

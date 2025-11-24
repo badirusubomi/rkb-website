@@ -51,7 +51,7 @@ export default function ScrollIndicator({ svgSrc }: ScrollIndicatorProps) {
 					animate={{ opacity: 1, rotate: isAtBottom ? 180 : 0 }}
 					exit={{ opacity: 0 }}
 					transition={{ duration: 0.8, ease: "easeInOut" }}
-					className="fixed bottom-10 left-10 z-50 cursor-pointer select-none"
+					className="fixed bottom-20 left-3 z-50 cursor-pointer select-none"
 					onClick={handleClick}
 				>
 					<motion.div

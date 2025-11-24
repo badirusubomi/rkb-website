@@ -29,7 +29,7 @@ export default function Navigation({ activeTab }: Record<string, string>) {
 				<div className="absolute bottom-25 left-1/2 z-30 -translate-x-1/2 mt-0 bg-[#25331f7e] backdrop-filter backdrop-blur-sm bg-opacity-30 text-[#C4A77D] rounded-4xl w-[90%] max-w-md p-6 flex flex-col gap-4 shadow-lg transition-all duration-300 ease-in-out">
 					<div className="flex justify-between items-center">
 						<h1 className="text-lg font-semibold">RKB Epiphany</h1>
-						<p className="text-sm opacity-70">&#x2026;slogan</p>
+						{/* <p className="text-sm opacity-70">&#x2026;slogan</p> */}
 					</div>
 
 					{/* Menu buttons */}
@@ -46,7 +46,7 @@ export default function Navigation({ activeTab }: Record<string, string>) {
 									}}
 								>
 									<div className="flex items-center bg-[#ECE5DF] rounded-2xl p-4 cursor-pointer hover:opacity-80 transition">
-										<div className="w-10 h-10 bg-gray-300 rounded-full mr-3" />
+										{/* <div className="w-10 h-10 bg-gray-300 rounded-full mr-3" /> */}
 										<span className="text-black text-lg">{item}</span>
 									</div>
 								</TransitionLink>

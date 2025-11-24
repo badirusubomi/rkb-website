@@ -103,14 +103,8 @@ export default function Portfolio() {
 					className="overlap-container flex-col-reverse sm:flex-row"
 				>
 					{/* text */}
-					<motion.div
-						initial={{ opacity: 0, y: 40 }}
-						whileInView={{ opacity: 1, y: -40 }}
-						transition={{ duration: 1 }}
-						viewport={{ once: true }}
-						className="max-w-lg w-[90vw] sm:max-w-lg text-[#cc9d68] space-y-8"
-					>
-						<motion.h1 className="text-base sm:text-lg md:text-2xl font-light leading-snug">
+					<div className="flex flex-col items-center justify-center max-w-lg w-[90vw] sm:max-w-lg text-[#cc9d68] space-y-8">
+						<motion.h1 className="text-lg text-center sm:text-left sm:text-lg md:text-2xl font-light leading-snug">
 							<q>
 								Where ideas turn into milestones and every handshake tells a
 								story
@@ -118,14 +112,15 @@ export default function Portfolio() {
 						</motion.h1>
 
 						{/* button */}
-						<motion.button
+						<motion.a
 							whileHover={{ scale: 1.05 }}
 							viewport={{ once: true }}
-							className="px-3 sm:px-4 py-1.5 sm:py-2 bg-[#2a3322] text-[#cc9d68] rounded-lg text-xs sm:text-sm md:text-base hover:bg-[#36402b] transition cursor-pointer"
+							href=""
+							className="px-3 sm:px-4 py-1.5 sm:py-2 bg-[#2a3322] text-[#cc9d68] rounded-lg max-w-[20rem] text-s sm:text-sm md:text-base hover:bg-[#36402b] transition cursor-pointer"
 						>
 							Book your events here
-						</motion.button>
-					</motion.div>
+						</motion.a>
+					</div>
 
 					{/* images container */}
 					<div className="relative w-[95vw] sm:w-screen md:w-[70vw] lg:w-[700px] h-[35vh] sm:h-[45vh] md:h-[60vh] lg:h-[450px]">
@@ -187,14 +182,8 @@ export default function Portfolio() {
 						))}
 					</div>
 					{/* text */}
-					<motion.div
-						initial={{ opacity: 0, y: 40 }}
-						whileInView={{ opacity: 1, y: -40 }}
-						transition={{ duration: 1 }}
-						viewport={{ once: true }}
-						className="max-w-lg w-[90vw] sm:max-w-lg text-[#cc9d68] space-y-8"
-					>
-						<motion.h1 className="text-base sm:text-lg md:text-2xl font-light leading-snug">
+					<div className="flex flex-col items-center justify-center max-w-lg w-[90vw] sm:max-w-lg text-[#cc9d68] space-y-8">
+						<motion.h1 className="text-lg text-center sm:text-left sm:text-lg md:text-2xl font-light leading-snug">
 							<q>
 								Objects reimagined — crafted with light to speak louder than
 								words
@@ -202,14 +191,15 @@ export default function Portfolio() {
 						</motion.h1>
 
 						{/* button */}
-						<motion.button
+						<motion.a
 							whileHover={{ scale: 1.05 }}
 							viewport={{ once: true }}
-							className="px-3 sm:px-4 py-1.5 sm:py-2 bg-[#2a3322] text-[#cc9d68] rounded-lg text-xs sm:text-sm md:text-base hover:bg-[#36402b] transition cursor-pointer"
+							href=""
+							className="px-3 sm:px-4 py-1.5 sm:py-2 bg-[#2a3322] text-[#cc9d68] rounded-lg max-w-[20rem] text-s sm:text-sm md:text-base hover:bg-[#36402b] transition cursor-pointer"
 						>
 							Book product photography here
-						</motion.button>
-					</motion.div>
+						</motion.a>
+					</div>
 				</motion.div>
 			</section>
 
@@ -226,26 +216,21 @@ export default function Portfolio() {
 					className="overlap-container flex-col-reverse sm:flex-row"
 				>
 					{/* text */}
-					<motion.div
-						initial={{ opacity: 0, y: 40 }}
-						whileInView={{ opacity: 1, y: -40 }}
-						transition={{ duration: 1 }}
-						viewport={{ once: true }}
-						className="max-w-lg w-[90vw] sm:max-w-lg text-[#cc9d68] space-y-8"
-					>
-						<motion.h1 className="text-base sm:text-lg md:text-2xl font-light leading-snug">
+					<div className="flex flex-col items-center justify-center max-w-lg w-[90vw] sm:max-w-lg text-[#cc9d68] space-y-8">
+						<motion.h1 className="text-lg text-center sm:text-left sm:text-lg md:text-2xl font-light leading-snug">
 							<q>A moment of expression where personality becomes art</q>
 						</motion.h1>
 
 						{/* button */}
-						<motion.button
+						<motion.a
 							whileHover={{ scale: 1.05 }}
 							viewport={{ once: true }}
-							className="px-3 sm:px-4 py-1.5 sm:py-2 bg-[#2a3322] text-[#cc9d68] rounded-lg text-xs sm:text-sm md:text-base hover:bg-[#36402b] transition cursor-pointer"
+							href=""
+							className="px-3 sm:px-4 py-1.5 sm:py-2 bg-[#2a3322] text-center sm:text-left text-[#cc9d68] rounded-lg max-w-[20rem] text-s sm:text-sm md:text-base hover:bg-[#36402b] transition cursor-pointer"
 						>
 							Book your personal photoshoots here
-						</motion.button>
-					</motion.div>
+						</motion.a>
+					</div>
 
 					{/* images container */}
 					<div className="relative w-[95vw] sm:w-screen md:w-[70vw] lg:w-[700px] h-[35vh] sm:h-[45vh] md:h-[60vh] lg:h-[450px]">
@@ -307,14 +292,8 @@ export default function Portfolio() {
 						))}
 					</div>
 					{/* text */}
-					<motion.div
-						initial={{ opacity: 0, y: 40 }}
-						whileInView={{ opacity: 1, y: -40 }}
-						transition={{ duration: 1 }}
-						viewport={{ once: true }}
-						className="max-w-lg w-[90vw] sm:max-w-lg text-[#cc9d68] space-y-8"
-					>
-						<motion.h1 className="text-base sm:text-lg md:text-2xl font-light leading-snug">
+					<div className="flex flex-col items-center justify-center max-w-lg w-[90vw] sm:max-w-lg text-[#cc9d68] space-y-8">
+						<motion.h1 className="text-lg text-center sm:text-left sm:text-lg md:text-2xl font-light leading-snug">
 							<q>
 								Objects reimagined — crafted with light to speak louder than
 								words
@@ -322,14 +301,15 @@ export default function Portfolio() {
 						</motion.h1>
 
 						{/* button */}
-						<motion.button
+						<motion.a
 							whileHover={{ scale: 1.05 }}
 							viewport={{ once: true }}
-							className="px-3 sm:px-4 py-1.5 sm:py-2 bg-[#2a3322] text-[#cc9d68] rounded-lg text-xs sm:text-sm md:text-base hover:bg-[#36402b] transition cursor-pointer"
+							href=""
+							className="px-3 sm:px-4 py-1.5 sm:py-2 bg-[#2a3322] text-center sm:text-left text-[#cc9d68] rounded-lg max-w-[20rem] text-s sm:text-sm md:text-base hover:bg-[#36402b] transition cursor-pointer"
 						>
 							Book product photography here
-						</motion.button>
-					</motion.div>
+						</motion.a>
+					</div>
 				</motion.div>
 			</section>
 
@@ -346,29 +326,25 @@ export default function Portfolio() {
 					className="overlap-container flex-col-reverse sm:flex-row"
 				>
 					{/* text */}
-					<motion.div
-						initial={{ opacity: 0, y: 40 }}
-						whileInView={{ opacity: 1, y: -40 }}
-						transition={{ duration: 1 }}
-						viewport={{ once: true }}
-						className="max-w-lg w-[90vw] sm:max-w-lg text-[#cc9d68] space-y-8"
-					>
-						<motion.h1 className="text-base sm:text-lg md:text-2xl font-light leading-snug">
+					<div className="flex flex-col items-center justify-center max-w-lg w-[90vw] sm:max-w-lg text-[#cc9d68] space-y-8">
+						<motion.h1 className="text-lg text-center sm:text-left sm:text-lg md:text-2xl font-light leading-snug">
 							<q>
-								Confidence&#x2C; presence&#x2C; professionalism captured in a
-								single frame
+								Confidence<span className="font-serif">&#x2C;</span> presence
+								<span className="font-serif">&#x2C;</span> professionalism
+								captured in a single frame
 							</q>
 						</motion.h1>
 
 						{/* button */}
-						<motion.button
+						<motion.a
 							whileHover={{ scale: 1.05 }}
 							viewport={{ once: true }}
-							className="px-3 sm:px-4 py-1.5 sm:py-2 bg-[#2a3322] text-[#cc9d68] rounded-lg text-xs sm:text-sm md:text-base hover:bg-[#36402b] transition cursor-pointer"
+							href=""
+							className="px-3 sm:px-4 py-1.5 sm:py-2 bg-[#2a3322] text-center sm:text-left text-[#cc9d68] rounded-lg max-w-[20rem] text-s sm:text-sm md:text-base hover:bg-[#36402b] transition cursor-pointer"
 						>
 							Book your head shots here
-						</motion.button>
-					</motion.div>
+						</motion.a>
+					</div>
 
 					{/* images container */}
 					<div className="relative w-[95vw] sm:w-screen md:w-[70vw] lg:w-[700px] h-[35vh] sm:h-[45vh] md:h-[60vh] lg:h-[450px]">
@@ -395,7 +371,11 @@ export default function Portfolio() {
 				</motion.div>
 			</section>
 
-			<Modal isOpen={isModalOpen} onClose={handleClose} pictures={currentPictures} />
+			<Modal
+				isOpen={isModalOpen}
+				onClose={handleClose}
+				pictures={currentPictures}
+			/>
 
 			<Footer footerColor="black" />
 		</div>

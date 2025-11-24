@@ -6,6 +6,7 @@ import { LayoutGrid } from "@/src/components/ui/layout-grid";
 import { useState } from "react";
 import { InfiniteMovingCards } from "@/src/components/ui/infinite-moving-cards";
 import ScrollIndicator from "../utils/scrollIndicator/scrollIndicator";
+import { ArrowRight } from "lucide-react";
 
 const SkeletonOne = () => {
 	return (
@@ -114,11 +115,11 @@ export default function Home() {
 
 			{/* hero section */}
 			<section className="w-dvw h-screen flex justify-center items-center">
-				<div className="flex flex-col md:flex-row w-[95vw] h-[95vh] rounded-xl px-20 py-10 my-0 lg:px-10 mx-0 justify-around gap-2 md:gap-30 items-center bg-[#04070070] backdrop-filter backdrop-blur-sm bg-opacity-30 relative overflow-hidden">
+				<div className="flex flex-col md:flex-row w-[95vw] h-[95vh] rounded-xl px-20 py-10 my-0 lg:px-10 mx-0 justify-around md:gap-30 items-center bg-[#04070070] backdrop-filter backdrop-blur-sm bg-opacity-30 relative overflow-hidden">
 					<motion.div
 						initial={{ opacity: 0, x: -50 }}
 						whileInView={{ opacity: 1, x: 0 }}
-						transition={{ duration: 2 }}
+						transition={{ duration: 4 }}
 						className="relative flex flex-col  gap-5"
 					>
 						{/* images */}
@@ -159,22 +160,23 @@ export default function Home() {
 								transition: { staggerChildren: 0.7, duration: 1 },
 							},
 						}}
-						className="flex text-[20px] md:text-xl flex-col w-max max-w-lg gap-2 md:gap-20 text-white text-3xl lg:text-4xl"
+						className="flex text-[15px] md:text-xl flex-col w-max max-w-lg gap-2 md:gap-20 text-white text-3xl lg:text-4xl"
 					>
 						<motion.h1
 							variants={{ hidden: { opacity: 0 }, visible: { opacity: 1 } }}
+							className="text-center sm:text-start"
 						>
 							Photography that elevates your brand
 						</motion.h1>
 						<motion.h1
 							variants={{ hidden: { opacity: 0 }, visible: { opacity: 1 } }}
-							className="text-center"
+							className="text-center text-wrap"
 						>
 							crafted to reflect the values behind your business
 						</motion.h1>
 						<motion.h1
 							variants={{ hidden: { opacity: 0 }, visible: { opacity: 1 } }}
-							className="text-end"
+							className="text-center sm:text-end"
 						>
 							Let us tell your story
 						</motion.h1>
@@ -242,26 +244,14 @@ export default function Home() {
 					<LayoutGrid cards={portfolioImages} />
 
 					{/* See more */}
-					<motion.h1
-						initial={{ opacity: 0, y: 20 }}
-						whileInView={{ opacity: 1, y: 0 }}
-						transition={{ duration: 1 }}
-						className="text-xl lg:text-4xl font-light text-right text-white mt-5"
+					<motion.a
+						whileHover={{ scale: 1.1 }}
+						viewport={{ once: true }}
+						href="/portfolio"
+						className="px-3 mt-0.5 text-sm bg-[#2F3A25] hover:bg-[#3e4d32] text-[#CC9D68] rounded-md py-2 transition-all"
 					>
-						{/* <motion.a
-							href="/portfolio"
-							whileHover={{ scale: 1.05 }}
-							className="text-white text-lg underline underline-offset-4 mx-[10/10]"
-						>
-							see more
-						</motion.a> */}
-						<motion.a
-							href="/portfolio"
-							className="px-3 mt-0.5 text-sm bg-[#2F3A25] hover:bg-[#3e4d32] text-[#CC9D68] rounded-md py-2 transition-all duration-300"
-						>
-							see more
-						</motion.a>
-					</motion.h1>
+						see more
+					</motion.a>
 				</div>
 			</section>
 
@@ -294,16 +284,24 @@ export default function Home() {
 					whileInView={{ opacity: 1, y: 0 }}
 					transition={{ duration: 2 }}
 					viewport={{ once: true }}
-					className="flex w-[95vw] h-[95vh] rounded-xl px-20 py-10 my-0 lg:px-10 mx-0 justify-between gap-30 items-center bg-[#04070070] backdrop-filter backdrop-blur-sm bg-opacity-30 relative overflow-hidden"
+					className="flex flex-col items-center justify-center w-[95vw] h-[95vh] rounded-xl px-20 py-10 my-0 lg:px-10 mx-0 gap-0 bg-[#04070070] backdrop-filter backdrop-blur-sm bg-opacity-30 relative overflow-hidden"
 				>
 					<motion.h1
 						initial={{ opacity: 0, y: 20 }}
 						whileInView={{ opacity: 1, y: 0 }}
 						transition={{ duration: 1 }}
-						className="text-xl lg:text-4xl font-light text-center text-white mb-5"
+						className="text-xl lg:text-4xl font-light text-center text-[#CC9D68]  mb-5"
 					>
 						Thoughts behind the lens
 					</motion.h1>
+					<motion.a
+						whileHover={{ scale: 1.05 }}
+						viewport={{ once: true }}
+						href="/blog"
+						className="flex  gap-2 justify-center items-center px-3 mt-0.5 text-sm bg-[#2F3A25]  hover:bg-[#3e4d32] text-[#CC9D68] rounded-md py-2 transition-all duration-300"
+					>
+						Read <ArrowRight />
+					</motion.a>
 				</motion.div>
 			</section>
 
@@ -426,12 +424,14 @@ export default function Home() {
 							/>
 						</div>
 
-						<button
+						<motion.button
+							whileHover={{ scale: 1.05 }}
+							viewport={{ once: true }}
 							type="submit"
-							className="mt-0.5 bg-[#2F3A25] hover:bg-[#3e4d32] text-[#CC9D68] rounded-md py-2 transition-all duration-300"
+							className="mt-0.5 bg-[#2F3A25] hover:bg-[#3e4d32] text-[#CC9D68] rounded-md py-2 transition-all cursor-pointer duration-300"
 						>
 							Contact Us
-						</button>
+						</motion.button>
 					</form>
 				</motion.div>
 			</section>
@@ -471,8 +471,10 @@ export default function Home() {
 							Book with us Now
 						</button> */}
 						<motion.a
-							href=""
-							className="px-3 mt-0.5 bg-[#2F3A25] hover:bg-[#3e4d32] text-[#CC9D68] rounded-md py-2 transition-all duration-300"
+							whileHover={{ scale: 1.05 }}
+							viewport={{ once: true }}
+							href="https://book.squareup.com/appointments/s4v957vaozqatr/location/LS4KC4CH63WJV"
+							className="px-3 mt-0.5 bg-[#2F3A25] hover:bg-[#3e4d32] text-white rounded-md py-2 transition-all duration-300"
 						>
 							Book with us Now
 						</motion.a>

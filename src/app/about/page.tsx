@@ -7,13 +7,7 @@ export default function About() {
 	return (
 		<div className="flex flex-col items-center justify-center min-h-screen snap-y snap-mandatory">
 			<ScrollIndicator svgSrc="/rkbAssets/scrollDownIndicator.svg" />
-			<motion.div
-				initial={{ opacity: 0, y: 50 }}
-				whileInView={{ opacity: 1, y: 0 }}
-				transition={{ duration: 2 }}
-				viewport={{ once: true }}
-				className="flex w-[95vw] h-auto flex-col items-center justify-center px-4 sm:px-8"
-			>
+			<div className="flex w-[95vw] h-auto flex-col items-center justify-center px-4 sm:px-8">
 				{/* headings */}
 				<motion.div
 					initial={{ opacity: 0, y: 40 }}
@@ -41,52 +35,70 @@ export default function About() {
 					className="max-w-3xl mb-20 space-y-6 px-4 w-[90vw] sm:max-w-3xl"
 				>
 					<motion.p className="text-sm md:text-base lg:text-lg font-light text-[#cc9d68]">
-						At RKB Epiphany Studio, we are driven by two core missions:
-						empowering businesses to thrive through impactful social media
-						strategies and creating a nurturing space for the next generation of
-						creatives to unlock their full potential. <br></br>
-						<br></br>On the business side, we partner with companies to elevate
-						their online presence and tell compelling stories that resonate with
-						their audience. Through dynamic social media campaigns and stunning
-						visuals, we help businesses sell their products and services while
-						building lasting connections with their customers. <br></br>
-						<br></br>On the community side, we are dedicated to supporting young
-						creatives—particularly storytellers, photographers, videographers,
-						and digital artists between the ages of 17 and 25. Our goal is to
-						become a leading force in the creative space, providing free access
-						to high-quality equipment, studio spaces, and mentoring. We envision
-						a physical location with fully equipped studio rooms where emerging
-						talents can bring their visions to life without the burden of cost,
-						enabling them to focus purely on creativity and the pursuit of their
-						artistic journeys. <br></br>
-						<br></br>Through this dual approach, RKB Epiphany Studio strive to
+						At RKB Epiphany Studio<span className="font-serif">&#x2C;</span> we
+						are driven by two core missions
+						<span className="font-serif">:</span> empowering businesses to
+						thrive through impactful social media strategies and creating a
+						nurturing space for the next generation of creatives to unlock their
+						full potential<span className="font-serif">.</span> <br></br>
+						<br></br>On the business side<span className="font-serif">,</span>{" "}
+						we partner with companies to elevate their online presence and tell
+						compelling stories that resonate with their audience
+						<span className="font-serif">.</span> Through dynamic social media
+						campaigns and stunning visuals<span className="font-serif">,</span>{" "}
+						we help businesses sell their products and services while building
+						lasting connections with their customers
+						<span className="font-serif">.</span> <br></br>
+						<br></br>On the community side<span className="font-serif">,</span>{" "}
+						we are dedicated to supporting young creatives—particularly
+						storytellers<span className="font-serif">,</span> photographers
+						<span className="font-serif">,</span> videographers
+						<span className="font-serif">,</span> and digital artists between
+						the ages of <span className="font-serif">17</span> and{" "}
+						<span className="font-serif">25</span>
+						<span className="font-serif">.</span> Our goal is to become a
+						leading force in the creative space
+						<span className="font-serif">,</span> providing free access to
+						high-quality equipment<span className="font-serif">,</span> studio
+						spaces<span className="font-serif">,</span> and mentoring
+						<span className="font-serif">.</span> We envision a physical
+						location with fully equipped studio rooms where emerging talents can
+						bring their visions to life without the burden of cost
+						<span className="font-serif">,</span> enabling them to focus purely
+						on creativity and the pursuit of their artistic journeys
+						<span className="font-serif">.</span> <br></br>
+						<br></br>Through this dual approach
+						<span className="font-serif">,</span> RKB Epiphany Studio strive to
 						be both a catalyst for business growth and a transformative resource
-						for the next wave of creative talent. Our social media platforms
-						will serve as a bridge, connecting these two worlds—showcasing
-						collaborations with businesses while fostering a vibrant community
-						where young creatives can learn, grow, and thrive. <br></br>
-						<br></br>Want to learn more about us? Book a consultation, let&#39;s
-						have a chat!
+						for the next wave of creative talent
+						<span className="font-serif">.</span> Our social media platforms
+						will serve as a bridge<span className="font-serif">,</span>{" "}
+						connecting these two worlds<span className="font-serif">-</span>
+						showcasing collaborations with businesses while fostering a vibrant
+						community where young creatives can learn
+						<span className="font-serif">,</span> grow
+						<span className="font-serif">,</span> and thrive
+						<span className="font-serif">.</span> <br></br>
+						<br></br>Want to learn more about us
+						<span className="font-serif">?</span> Book a consultation
+						<span className="font-serif">,</span> let
+						<span className="font-serif">&apos;</span>s have a chat
+						<span className="font-serif">!</span>
 					</motion.p>
 				</motion.div>
 
 				{/* button */}
-				<motion.div
-					initial={{ opacity: 0, y: 40 }}
-					whileInView={{ opacity: 1, y: 0 }}
-					transition={{ duration: 1 }}
-					viewport={{ once: true }}
-					className="flex justify-center mb-20"
-				>
-					<motion.button
+				<div className="flex justify-center mb-20">
+					<motion.a
 						whileHover={{ scale: 1.05 }}
 						viewport={{ once: true }}
+						href="https://book.squareup.com/appointments/s4v957vaozqatr/location/LS4KC4CH63WJV"
 						className="px-4 py-2 w-full bg-[#2a3322] text-[#cc9d68] rounded-lg text-sm md:text-2xl hover:bg-[#36402b] transition cursor-pointer"
 					>
 						Book Appointment Now
-					</motion.button>
-				</motion.div>
-			</motion.div>
+					</motion.a>
+				</div>
+			</div>
 
 			<Footer footerColor="black" />
 		</div>

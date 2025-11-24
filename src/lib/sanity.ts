@@ -34,6 +34,15 @@ export async function fetchBlogbyId(id: string): Promise<BlogData | null> {
 	return client.fetch(query, { id });
 }
 
+export async function fetchSideBlogs(id: string): Promise<BlogData | null> {
+	const query = `*[_type == "blog" && _id == $id][0]{
+    _id,
+    title,
+    date,
+  }`;
+	return client.fetch(query, { id });
+}
+
 export async function fetchBlogs(): Promise<BlogData[] | null> {
 	const BLOG_QUERY = `*[
         _type == "blog"
