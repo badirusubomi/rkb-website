@@ -29,7 +29,7 @@ export default function BlogDetails({
 	];
 
 	return (
-		<div className="flex flex-col items-center min-h-screen text-white font-serif ">
+		<div className="flex flex-col items-center min-h-screen text-white ">
 			<ScrollIndicator svgSrc="/rkbAssets/scrollDownIndicator.svg" />
 
 			{/* Floating Button (Mobile Only) */}
@@ -43,7 +43,7 @@ export default function BlogDetails({
 			<main className="max-w-7xl mx-auto w-full px-4 sm:px-6 lg:px-8 py-32">
 				<div className="flex flex-col lg:flex-row bg-[#04070070] backdrop-blur-sm rounded-2xl p-10 ">
 					{/* Desktop Sidebar */}
-					<aside className="hidden lg:block w-full lg:w-1/4 lg:pr-12 border-zinc-700 lg:border-r-2 mb-12 lg:mb-0">
+					<aside className="hidden lg:block w-full lg:w-1/4 lg:pr-12 border-[#cc9d68] lg:border-r-2 mb-12 lg:mb-0">
 						<h3 className="text-sm uppercase tracking-widest text-zinc-400 mb-6">
 							Recent
 						</h3>
@@ -57,7 +57,9 @@ export default function BlogDetails({
 									>
 										{blog.title}
 									</a>
-									<p className="text-xs text-zinc-500 mt-1">{blog.date}</p>
+									<p className="text-xs text-zinc-500 mt-1 font-serif">
+										{blog.date}
+									</p>
 								</li>
 							))}
 
@@ -94,7 +96,9 @@ export default function BlogDetails({
 
 						{/* Content */}
 						<article className="prose prose-invert prose-xl max-w-none font-light leading-relaxed">
-							<p>{blog.content?.slice(0, 600) + "..."}</p>
+							<p className="font-serif">
+								{blog.content?.slice(0, 600) + "..."}
+							</p>
 
 							<p className="mt-10">
 								I&apos;ll do my best to explain what I mean by that. Let&apos;s
@@ -135,7 +139,9 @@ export default function BlogDetails({
 											>
 												{blog.title}
 											</a>
-											<p className="text-xs text-zinc-500 mt-1">{blog.date}</p>
+											<p className="font-serif text-xs text-zinc-500 mt-1 ">
+												{blog.date}
+											</p>
 										</li>
 									))}
 

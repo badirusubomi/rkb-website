@@ -226,7 +226,7 @@ export default function Portfolio() {
 							whileHover={{ scale: 1.05 }}
 							viewport={{ once: true }}
 							href=""
-							className="px-3 sm:px-4 py-1.5 sm:py-2 bg-[#2a3322] text-center sm:text-left text-[#cc9d68] rounded-lg max-w-[20rem] text-s sm:text-sm md:text-base hover:bg-[#36402b] transition cursor-pointer"
+							className="px-3 sm:px-4 py-1.5 sm:py-2 bg-[#2a3322] text-center sm:text-center text-[#cc9d68] rounded-lg max-w-[20rem] text-s sm:text-sm md:text-base hover:bg-[#36402b] transition cursor-pointer"
 						>
 							Book your personal photoshoots here
 						</motion.a>
